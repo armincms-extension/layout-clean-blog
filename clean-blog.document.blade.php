@@ -1,11 +1,5 @@
-@var($image = $this->component->data(
-	'image', $this->config('image.schema', 'main')
-))  
-@if(! Storage::disk('armin.public')->has($image) && $image != 'original')
-	@var($image = $this->data('image.original'))
-@endif 
-<header class="masthead" 
-	@if($this->config('show_image', true)) style="background-image:url('{{ $image }}')" @endif>
+ <header class="masthead" 
+	@if($this->config('show_image', true)) style="background-image:url('{{ $this->component->featuredImage() }}')" @endif>
     <div class="overlay"></div> 
     <div class="row">
       	<div class="col-lg-10 col-md-12">
@@ -13,8 +7,8 @@
 	        	@if($this->config('show_title', true))
 	          	<h1>{!! $this->data('title') !!}</h1>
 	          	@endif
-	        	@if($this->config('show_intro_text', true))
-	          	<small class="subheading">{!! $this->data('intro_text') !!}</small>
+	        	@if($this->config('show_abstract', true))
+	          	<small class="subheading">{!! $this->data('abstract') !!}</small>
 	          	@endif
 	          	<span class="meta">  
 	        		@if($this->config('show_author', true))
@@ -30,8 +24,8 @@
       	</div>
     </div> 
 </header> 
-@if($this->config('show_full_text', true))
+@if($this->config('show_description', true))
 <article>  
-	{!! $this->data('full_text') !!}
+	{!! $this->data('description') !!}
 </article>
 @endif 
