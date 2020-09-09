@@ -1,0 +1,19 @@
+{
+    "name": "armin-cms/layout-clean-blog",
+    "description": "layout extension for ArminCMS",
+    "version": "1.0.0",
+    "type": "package",
+    "license": "ArminCms",
+    "authors": [
+        {
+            "name": "Zareh Esmaiel",
+            "email": "zarehesmaiel@gmail.com"
+        }
+    ],
+    "require" : { 
+        "armin-cms/plugin-bootstrap": ".*"
+    },
+    "minimum-stability": "dev",
+    "group": "blog",
+    "label": "Clean Blog"
+} 
